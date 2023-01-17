@@ -1,8 +1,8 @@
 const path = require('path');
 const fs = require('fs');
-const helmet = require('helmet');
+//const helmet = require('helmet');
 const morgan = require('morgan');
-const https = require('https');
+//const https = require('https');
 
 const express = require('express');
 
@@ -28,12 +28,12 @@ const { Certificate } = require('crypto');
 
 const app = express();
 
-const privateKey = fs.readFileSync('server.key');
-const certificate = fs.readFileSync('server.cert');
+//const privateKey = fs.readFileSync('server.key');
+//const certificate = fs.readFileSync('server.cert');
 
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 
-app.use(helmet());
+//app.use(helmet());
 app.use(morgan('combined', {stream: accessLogStream}));
 
 app.use(cors());
